@@ -2,7 +2,7 @@
 Need to specify every data type we use.
 5 primary types encountered in C.
 
-- int
+## int
 The int data type is used for variables that will store integers.
 
 Integers always take up 4 bytes of memory (32 bits). This means the range of values they can store is necessarily limited to 32 bits worth of information.
@@ -10,10 +10,10 @@ Integers always take up 4 bytes of memory (32 bits). This means the range of val
 Ranges from -2power31 - 2power31-1
 Half negative half positive.
 
-- unsigned int
+## unsigned int
 unsigned is a qualifier that can be applied to certain types (including int), which effectively doubles the positive range of variables of that type, at the cost of disallowing any negative values.
 
-- char
+## char
 Char data type used for variables that will store single characters.
 
 Characters always take up to 1 byte of memory (8 bits). This means the range of values they can store is necessarily limited to 8 bits worth of information.
@@ -24,17 +24,17 @@ A = 65
 a = 97
 
 
-- float
+## float
 The float data type is used for variables that will store floating-point values, also known as real numbers. - takes up 4 bytes memory (32 bits)
 
 Range of float is complicated - suffice to say with 32 bits of precision, some of which might be used for an integer part but limited to how precicse we can be.
 
-- double
+## double
 used for variables that will store floating-point values, also known as real numbers.
 
 The difference is that doubles are double precision. They always take up 8 bytes of memory (64 bits). With an additional 32 bits of precision relative to a float, doubles allow us to be specify much more precise real numbers.
 
-- void
+## void
 is a type, not a data type.
 Functions can hvae a void return type, which means they dont return a value.
 The parameter list of a function can also be void meaning the function takes no parameters.
@@ -42,10 +42,10 @@ Void is like a placeholder for "nothing".
 
 Other data types:
 
-- bool
+## bool
 used for variables that will store a boolean value. Capable of storing one of two values, true and false.
 
--string
+## string
 Used for variables that store a series of characters, which programmers typically call a string.
 Strings include things such as words, sentences, paragraphs and so on.
 
