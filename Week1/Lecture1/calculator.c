@@ -7,4 +7,8 @@ int main(void)
     int y = get_int("y: ");
 
     printf("%.50f\n", (float) x / y);
+    // %f → means “print a floating-point number” (decimal number).
+    // .50 → means “show 50 digits after the decimal point.”
+    // (float) → explicitly casts x to a float type, so the division is not integer division.
+    // / → divides x by y.
 }
