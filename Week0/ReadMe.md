@@ -1,5 +1,4 @@
 Lecture 0
-This class is about problem-solving.
 
 # Computer Science and Problem Solving.
 - Computer programming is about taking some input and creating some output - thus solving a problem. What happens in between the input and output, what we could call a black box,is the focus of this course.

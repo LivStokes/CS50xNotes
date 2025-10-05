@@ -1,5 +1,5 @@
 Starting from Scratch
-It’s time to choose your own adventure! Your assignment, quite simply, is to implement in Scratch, at scratch.mit.edu, any project of your choice, be it an interactive story, game, animation, or anything else, subject only to the following requirements:
+Implement in Scratch, at scratch.mit.edu, any project of your choice, be it an interactive story, game, animation, or anything else, subject only to the following requirements:
 
 Your project must use at least two sprites (2d character/ object), at least one of which must not be a cat.
 Your project must have at least three scripts total (i.e., not necessarily three per sprite).
@@ -16,7 +16,7 @@ Alright, off you go. Make us proud!
 
 Once finished with your project, select File > Save now one last time. Then select File > Save to your computer and keep that file so that you can submit it. If prompted by your computer to Open or Save the file, be sure to Save it.
 
-How to Submit
+How to Submit:
 Be sure to complete both steps below, in order!
 
 Step 1 of 2
@@ -31,6 +31,5 @@ Go to submit.cs50.io/upload/cs50/problems/2025/x/scratch.
 Click “Choose File” and choose your .sb3 file. Click Submit.
 If you encounter the error “No files in this directory are expected by cs50/problems/2025/x/scratch”, please make sure your scratch project file name indeed ends with .sb3!
 
-That’s it! Once your submission uploads, you should be redirected to your submission page. Click the submission link and then the check50 link to see which requirements your project met. You are welcome to resubmit as many times as you’d like (before the deadline)! Note that if you upload a file whose size is larger than 10MB (which is quite large for a Scratch project) check50 may struggle to process it. Best to make sure your file is smaller than that limit.
-
-To view your current progress in the course, visit the course gradebook at cs50.me/cs50x!
+Once your submission uploads, you should be redirected to your submission page. 
+Click the submission link and then the check50 link to see which requirements your project met. Note that if you upload a file whose size is larger than 10MB (which is quite large for a Scratch project) check50 may struggle to process it.
