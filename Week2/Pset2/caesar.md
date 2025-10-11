@@ -32,13 +32,13 @@ For each character in the plaintext:
 
 ## Behavior examples
 
-$ ./caesar
+$ ./caesar // should throw an error
 Usage: ./caesar key
 
 $ ./caesar banana
 Usage: ./caesar key
 
-$ ./caesar 1
+$ ./caesar 1 // Setting the key
 plaintext:  HELLO
 ciphertext: IFMMP
 
