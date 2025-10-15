@@ -3,7 +3,7 @@
 #include <string.h>
 
 typedef struct
-{Lec
+{
     string name;
     string number;
 } person;

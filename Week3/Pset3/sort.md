@@ -16,3 +16,15 @@ Provided to you are three already-compiled C programs, sort1, sort2, and sort3, 
 Each of sort1, sort2, and sort3 implements a different sorting algorithm: selection sort, bubble sort, or merge sort.
 
 Your task is to determine which sorting algorithm is used by each file. 
+
+sort1 uses: Bubble sort
+
+How do you know?: sort1 reversed list took 5.198s; sort1 sorted list took 0.330s.
+
+sort2 uses: Merge sort
+
+How do you know?: sort2 reversed list took 0.343s; sort2 sorted list took 0.328s.
+
+sort3 uses: Selection sort
+
+How do you know?: sort3 reversed list took 2.964s; sort3 sorted list took 2.881s.
