@@ -47,6 +47,8 @@ int main(void)
 - When a function returns a value, that frame is done and goes away, meaning it gets popped back off of the call stack.
 - Then the frame below it becomes the new active frame.
 
+### Process
+
 > [fact(1)] -> returns 1.
 - Gets popped off the stack/destroyed and moves onto the next.
 > [fact(2)] -> becomes new active frame. Gets unpaused and returns 2 * 1 = 2.
