@@ -3,7 +3,7 @@
 - An algorithm is a step by step set of instructions for completing a task. 
 
 ## Basic idea
-- In selection sort, the idea of the algorithm is to find the smallest unsorted element and add i tto the end of the sorted list.
+- In selection sort, the idea of the algorithm is to find the smallest unsorted element and add i to the end of the sorted list.
 - Builds a sorted list, one element at a time.
 
 ## In pseudocode:
