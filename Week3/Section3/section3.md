@@ -37,5 +37,18 @@ Bestcase - Ω(N)
 
 ## Structs
 
+typedef struct // typedef pertains to C syntax
+{
+    string name; // Specifications / customised elements of datastructure.
+    int votes;
+}
+candidates; // How choosing to name datastructure.
+
+How to make a variable of type candidate:
+- candidate president;
+
+How to define attributed:
+- president.name = "Alice";
+- president.votes = 10;
 
 ## Recursion
