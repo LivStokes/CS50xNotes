@@ -18,18 +18,18 @@
 ### Example of recursion
 - Using the factorial function to see if we can make this more clear.
 
-> int fact(int n)
-> {
->   if (n == 1)
->       return 1;
->   else
->       return n * fact(n-1);
-> }
->
-> int main(void)
-> {
->   printf("%i\n", fact(5));
-> }
+int fact(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+        return n * fact(n-1);
+}
+
+int main(void)
+{
+    printf("%i\n", fact(5));
+}
 
 - Start at beggining of main which calls another function printf.
 - As soon as it does that, main is on pause and is waiting for printf() to do its work.
