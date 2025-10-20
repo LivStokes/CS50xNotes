@@ -342,8 +342,8 @@ int main(void)
     
 - You can even make a sprite follow another sprite. Adding another sprite, add the following code blocks to your program:
     
-    whenclickedgotorandom positionforeverpointtowardsHarvardmove1steps
-    
+    whenclickedgotorandom positionforeverpointtowardsHadrvardmove1steps
+    d
     Notice how the MIT logo now seems to follow around the Harvard one. You can learn more by [exploring these code blocks](https://scratch.mit.edu/projects/565479840).
     
 - Go try the full game [Ivy’s Hardest Game](https://scratch.mit.edu/projects/565742837).
