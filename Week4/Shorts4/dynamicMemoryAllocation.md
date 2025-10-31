@@ -58,9 +58,9 @@ How to dynamically allocate an integer:
 ### example of statically vs dynamically allocated memory
 - We want to get an integer from the user.
 > int x = get_int();
-- We want to declare an array of that many floats on the ==stack==.
+- We want to declare an array of that many floats on the **stack**.
 > float stack_array[x];
-- We want to declare an array on that many floats on the ==heap==.
+- We want to declare an array on that many floats on the **heap**.
 > float *heap_array = malloc(sizeof(x * float));
 - If i want 50 floats, we need 50 times the size of a float.
 - Malloc returns to us a giant block of memory that size, which we can then treat like any other array.
@@ -69,9 +69,9 @@ How to dynamically allocate an integer:
 - Dynamicallt allocated memory is not automaticallt returned to the system for later use when the function in which its created finishes execusion.
 - Failing to return memory back to the system when youre finished with it results in a memory leak which can compromise your systems performance.
 - When a function finishes running, all the memory that was created for purposes of that memory gets destroyed and released back into the system to be used somewhere else.
-- When you finish working with dynamically allocated memory, you must ==free()== it.
+- When you finish working with dynamically allocated memory, you must **free()** it.
 - If you dont free it, you get a memory leak which can slow downyour system.
-- There are some browsers that are notorious for not freing memory which can cause your computer to slow down because that browser is basicallt hogging a bunch on memory and other programs on your computer cant use the memory because the browser has allocated it and said "its mine".
+- There are some browsers that are notorious for not freing memory which can cause your computer to slow down because that browser is basically hogging a bunch on memory and other programs on your computer cant use the memory because the browser has allocated it and said "its mine".
 - Thats why if you leave a browser open for days it can slow down your computer.
 - So the rule is when working with dynamically allocated memory is that you must free it.
 - When you free() memory, what you passed to free is a pointer to any memory that you have dynamically allocated previously.

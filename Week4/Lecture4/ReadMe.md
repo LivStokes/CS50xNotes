@@ -764,8 +764,8 @@ Functions related to files:
 - fwrite
 - fseek
 
->By creating a file phonebook.c and phonebook.csv
->Type this code:
+> By creating a file phonebook.c and phonebook.csv
+> Type this code:
 ```
 #include <cs50.h>
 #include <stdio.h>
