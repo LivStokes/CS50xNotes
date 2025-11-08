@@ -3,40 +3,33 @@ Preprocessing. Compiling. Assembling. Linking. Debugging. Arrays. Strings. Comma
 
 ## Real world problems
 Reading Levels:
-Grade 1
-Grade 3
-Grade 10
+1. Grade 1
+2. Grade 3
+3. Grade 10
 
 ## Cryptography / Compiling
-Scrambling information.
-
-Source code -> compiler -> machine code
-
-clang hello.c
-./a.out
-
-make = clang
-
+- Scrambling information.
+- Source code -> compiler -> machine code
+- clang hello.c
+- ./a.out
+- make = clang
+```
 #include <stdio.h>
 
 int main(void)
 {
    printf("hello, world\n") ;
 }
-
-code hello.c
-clang hello.c
-
-ls in this folder will now be a.out, hello.c
-
-We can provide more arguments to clang with command line arguments.
-When run command, you can type name of command/programme your running, you can also give arguments to input to that program.
-
-When using make hello, the argument your running is hello.
-
-clang -o hello hello.c // -o means output of file called hello when you compile hello.c
-./hello
-
+```
+- code hello.c
+- clang hello.c
+- ls in this folder will now be a.out, hello.c
+- We can provide more arguments to clang with command line arguments.
+- When run command, you can type name of command/programme your running, you can also give arguments to input to that program.
+- When using make hello, the argument your running is hello.
+- clang -o hello hello.c // -o means output of file called hello when you compile hello.c
+- ./hello
+```
 #include <cs50.h>
 #include <stdio.h>
 
@@ -45,20 +38,20 @@ int main(void)
     string name = get_string("What's your name? ");
     printf("hello, %s\n, name);
 }
-
-clang -o hello hello.c -lcs50
+```
+- clang -o hello hello.c -lcs50
 is equivelent to 
-make hello.c
-./hello
+- make hello.c
+> ./hello
 
-When i use make, 4 things happen:
-preprocessing
-compiling
-assembling
-linking
+- When we use make, 4 things happen:
+1. preprocessing
+2. compiling
+3. assembling
+4. linking
 
-#include <stdio.h> -> preprocessor directive (starts with hashtag)
-
+- #include <stdio.h> -> preprocessor directive (starts with hashtag)
+```
 void meow(void);
 int main(void)
 {
@@ -72,16 +65,17 @@ void meow(void)
 {
     printf("meow\n");
 }
+```
 
+### compiling:
+- means it gets translated from one language to another language (C to assembly code) goes from source code to zeros and ones total.
 
-compiling:
-means it gets translated from one language to another language (C to assembly code) goes from source code to zeros and ones total.
+### Assembling:
+- Converts ones and zeros: converting your assembly code into machine code
 
-Assembling:
-Converts ones and zeros: converting your assembly code into machine code
-
-Linking:
-How many files are involved in the prccess of compiling this code?
+### Linking:
+- How many files are involved in the prccess of compiling this code?
+```
 #include <cs50.h?
 #include <stdio.h>
 
@@ -90,19 +84,17 @@ int main(void)
     string name = get_string("What's your name? ");
     printf("hello, %s\n", name";)
 }
+```
+- There are three. 
+- The main programme, cs50.h, and stdio.h.
 
-There are three. 
-The main programme, cs50.h, and stdio.h.
-
-What happens in the fourth and final step of building your program, compiling program is this: hello.c, cs50.c, and stdio.c.
+- What happens in the fourth and final step of building your program, compiling program is this: hello.c, cs50.c, and stdio.c.
 
 ## Debugging
-
-Debugging is the process of locating and removing bugs from your code.
-Debugging technique: rubber duck debugging - talk to inanimte object to help through code and why its not working.
-
-// Buggy example for printf
-
+- Debugging is the process of locating and removing bugs from your code.
+- Debugging technique: rubber duck debugging - talk to inanimte object to help through code and why its not working.
+- // Buggy example for printf
+```
 #include <stdio.h>
 
 int main(void)
@@ -112,12 +104,11 @@ int main(void)
         printf("#\n");
     }
 }
-
-The code prints 4 blocks instead of 3.
+```
+- The code prints 4 blocks instead of 3.
 so then type code buggy0.c into the terminaland write the code above.
-
-// Buggy example for printf
-
+- // Buggy example for printf
+```
 #include <stdio.h>
 
 int main(void)
@@ -128,10 +119,9 @@ int main(void)
         printf("#\n");
     }
 }
-
-
-Running this code, you will see numerous statements, including i is 0, i is 1, i is 2, and i is 3. Seeing this, you might realize that further code needs to be corrected as follows:
-
+```
+- Running this code, you will see numerous statements, including i is 0, i is 1, i is 2, and i is 3. Seeing this, you might realize that further code needs to be corrected as follows:
+```
 #include <stdio.h>
 
 int main(void)
@@ -141,12 +131,11 @@ int main(void)
         printf("#\n");
     }
 }
-
-This code can be further improved as follows:
-
-// Buggy example for debug50
-code buggy.c
-
+```
+- This code can be further improved as follows:
+- // Buggy example for debug50
+- code buggy.c
+```
 #include <cs50.h>
 #include <stdio.h>
 
@@ -166,20 +155,19 @@ void print_column(int height)
     }
 }
 
+IN TERMINAL:
 make buggy
 ./buggy
 Height: 2
 //#
 //#
 //#
-debug50 ./buggy
+```
+- debug50 ./buggy
 "Looks like you havent set any breakpoints.
-
-A breakpoint is a stop sign you can add to any line of code and tell the computer to break execution at that point.
-
-A red dot appears when hovered on left side of code. When clicked it places dot.
-
-It runs the code and stops at the breakpoint.
+- A breakpoint is a stop sign you can add to any line of code and tell the computer to break execution at that point.
+- A red dot appears when hovered on left side of code. When clicked it places dot.
+- It runs the code and stops at the breakpoint.
 
 Locals
 h = 32766
@@ -199,23 +187,18 @@ Step over that and i = 1, then i = 1, then i = 2, then i = 3. In terminal this p
 This gives me the ability to step through my code line by line at a normal pace.
 
 ## Types / scores
-
 Data Types Sizes:
-bool = 1 byte
-int = 4 bytes
-long = 8 bytes
-float = 4 bytes
-double = 8 bytes
-char = 1 byte
-string = ? bytes
+- bool = 1 byte
+- int = 4 bytes
+- long = 8 bytes
+- float = 4 bytes
+- double = 8 bytes
+- char = 1 byte
+- string = ? bytes
 
 When storing memory, they are contiguous back to back in memory chip.
-
 E.g.
-int score1 = 72;
-int score2 = 73;
-int score3 = 33;
-
+```
 #include <stdio.h>
 int main(void)
 {
@@ -226,15 +209,12 @@ int main(void)
     // Print average
     printf("Average: %f\n", (score1 + score2 + score3) / 3);
 }
-
-Error = truncation after the decimal point (int + int + int / int = get back int)
-
-to solve, change 3 to 3.0, or cast the 3 to a float by adding (float) before it.
-
-Now when i run the code by make scores ./scores, it gives me an average of 59.333333
-
-What is badly designed abuot this program?
-If i want more score i would keep just adding score 4,5,6... and it becomes too long. Instead we can set the value to just scores.
+```
+- Error = truncation after the decimal point (int + int + int / int = get back int)
+- To solve, change 3 to 3.0, or cast the 3 to a float by adding (float) before it.
+- Now when i run the code by make scores ./scores, it gives me an average of 59.333333
+- What is badly designed abuot this program?
+- If i want more score i would keep just adding score 4,5,6... and it becomes too long. Instead we can set the value to just scores.
 
 ## Arrays
 An array is a sequence of values back to back / contiguous in memory all of which are the same data type.
@@ -472,7 +452,7 @@ int main(void)
 }
 
 ## Uppercase
-
+```
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -496,8 +476,9 @@ int main(void)
     }
     printf("\n");
 }
-
+```
 Can use the ctype.h library toupper function to get:
+```
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -513,7 +494,7 @@ int main(void)
     }
     printf("\n");
 }
-
+```
 ## Command Line Arguments (argc and argv)
 They are arguments are words you can type at the command line to influence the behaviour of the programme.
 E.g.
@@ -532,15 +513,16 @@ int main(int argc, string argv[])
     ...
 }
 
-These are two arguments, one is a int and the other is an array of strings.
-When an array is passed into a function, leave [] empty.
-This implies that main can, if you want, take an int and array of strings.
+- These are two arguments, one is a int and the other is an array of strings.
+- When an array is passed into a function, leave [] empty.
+- This implies that main can, if you want, take an int and array of strings.
 
 - argc = argument count (how many command line arguments have been provided)
 - argv = argument vector (vector is often another word for an array)
 
-How to use this technique?
-Old way:
+### How to use this technique?
+- Old way:
+```
 #include <cs50.h>
 #include <stdio.h>
 
@@ -549,8 +531,9 @@ int main(void)
     string answer = get_string("Whats your name? ");
     printf("hello, %s\n", answer);
 }
-
-New way:
+```
+- New way:
+```
 #include <cs50.h>
 #include <stdio.h>
 
@@ -562,11 +545,11 @@ int main(int argc, string argv[])
 make greet
 ./greet Olivia
 output: Hello, ./greet
-
-If you make argv[0] it will output ./(programme name).
-So argv[1] would output: Hello, Olivia, which is the next string of the command.
-
-To avoid printing out (null) if user inputs an extra string, we can code:
+```
+- If you make argv[0] it will output ./(programme name).
+- So argv[1] would output: Hello, Olivia, which is the next string of the command.
+- To avoid printing out (null) if user inputs an extra string, we can code:
+```
 #include <cs50.h>
 #include <stdio.h>
 
@@ -581,8 +564,9 @@ int main(int argc, string argv[])
         printf("This is too few or too many strings\n");
     }
 }
-
-To get all displays of command line:
+```
+- To get all displays of command line:
+```
 #include <cs50.h>
 #include <stdio.h>
 
@@ -593,6 +577,7 @@ int main(int argc, string argv[])
         printf("%s\n", argv[i]);
     }
 }
+```
 
 ## Cowsay
 
@@ -695,84 +680,4 @@ A becomes B, B becomes C etc.
 ROT13, means rotating numbers by 13.
 
 ROT26 is bad because it goes A to A, B to B etc.
-
-Decripting is just minusing the key, e.g. -1 C to B, B to A etc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Decripting is just minusing the key, e.g. -1 C to B, B to A etc.
