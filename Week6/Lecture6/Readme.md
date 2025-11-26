@@ -1,45 +1,90 @@
 # Python
-- Higher level language which does lower level stuff more quick
-e.g. asking for memory, giving memory back.
-- you don't have to manage your own memory. 
-- You can iterate over things much more quickly than using a traditional for loop as in C
-- has even more of an ecosystem of libraries
-- libraries being code that other people wrote that you can use.
--  We began in week 0, hello, in the world of scratch. Then trasitioned to a complex c implementation.
+Python is a Higher level language which does lower level stuff more quick.
+- e.g. asking for memory, giving memory back.
+    - Don't have to manage your own memory. 
+- You can iterate over things much more quickly than using a traditional for loop as in C.
+- It has even more of an ecosystem of libraries.
+    - Libraries being code that other people wrote that you can use.
+    
+To run a program:
+- In C to make program and run it:
+```
+clang -o hello hello.c -lcs50
+./hello
+```
+- In Python to make program and run it:
+```
+python hello.py
+```
+- This is because python is an interpreted language.
+- When writing C code, we compile it from source code to machine code, the 0s and 1s, that the CPU understands.
+
+## Speller/Dictionary
+For dictionary.py:
+```
+words = set()
+
+def check(word):
+    return word.lower() in words
+
+def load(dictionary):
+    with open(dictionary) as file:
+        words.update(file.read().splitlines())
+    return True
+    
+def size():
+    return len(words)
+
+def unload():
+    return True
+```
+- We create a variable called words.
+- We equal it to a function called set() which gives me a container for a set of values, e.g. no duplicates. This is sort of like an array, or like a list, but less defined.
+- Then define funtion using def called check(word) which takes one word as input.
+- To implement it we return word.lower() in words.
+- Then define another function called def load(dictionary): that takes dictionary as input.
+- To implement it we with open(dictionary) as file:
+- Then words.update(file.read().splitlines())
+- Then return True.
+- Then define size function whose purpose is to return the size of the dictionary by return len(words).
+- Then def unload(): which we Return True
+
+## Filter
+For Blur effect:
+```
+from PIL import Image, ImageFilter
+
+before = Image.open("bridge.bmp")
+after = before.filter(ImageFilter.BoxBlur(1))
+after.save("out.bmp")
+```
+- Use library that comes with python: from PIL import Image, ImageFilter
+- Then create variable called before equal to return value of a function called Image.open("bridge.bmp") which we open file bridge.bmp.
+- Then create a variable called after equal to before.filter passing in as an argument ImageFilter.BoxBlur(1).
+- Then after.save("out.bmp")
+- Change (1) to (10) to make it more blurry.
+    - Before version is bridge.bmp
+    - After version is out.bmp
+
+## Functions
+There are several different ways to solve the same problem in Python.
 - In Python, if you want to implement hello, world, it's going to be reduced to a single one line.
 > print("hello, world")
 - No need for \n, f in printf, or ;
-
-## Librarys
-- We saw some libraries in C, we're also going to see them in Python, even more powerfully so.
-- In the world of Python, just know that libraries are generally called **modules** and **packages**.
-- There's some slight difference between those two, but, for now, module packages are just Python terminology for what we already to be libraries. 
-- In Python, there is still going to be a CS50 library, but very brief training wheels that are available, if only to ease the transition from C to Python.
-> import cs50
-- There's alternative syntax you might see over time where if you only want to import one or specific things, you don't have to import the whole library.
-- You can import from cs50 a specific function or symbol more generally like this.
-> from cs50 import get_strinf
-- Building on the program we wrote already by doing something just like we did in week 0 as well as in week 1, where we got input from the user.
-- We had to introduce get_string.
-- We also had to introduce, in the context of printf, these placeholders like %s. 
-- There are several different ways to solve the same problem in Python.
-- We can declare a variable called answer
+- We can declare a variable called answer:
 > answer = get_string("Whats your name? ")
 Then
 > print("Hello, " + answer)
 - The + represents concatanation.
 Or
 > print("Hello,", answer)
-- In python if you pass 1+ arguments to the print function, they will all be printed with a single space inbetween them.
+- In python if you pass 1+ arguments to the print function, they will be printed with a single space inbetween them.
 - A third and most common way:
 > print(f"Hello, {answer}")
-- Most common way.
 - Pythons print function to format a string by pluging in one or more values is to place an f on the left of the string itself. AKA an f string. 
 - Put curly braces and the name of the actual thing you want to plug in to that location. 
     - This is called variable interpolation whereby the variable's value, answer in this case, will be substituted without the curly braces appearing in the final output. 
     - So that's then how we might implement exactly that same feature using this thing called a format string.
-
-### Example explanation
 - code hello.py
 ```
 print("hello, world")
@@ -58,7 +103,7 @@ int main(void)
 ```
 - Change pythons code to get input from the user:
 ```
-from cs50 import get_string
+from cs50 import get_string 
 
 answer = get_string("Whats your name?: ")
 print(f"hello, {answer}")
@@ -67,53 +112,62 @@ print(f"hello, {answer}")
 - Differences: Didn't have to declare the type of variable.
 - Python as an interpreter will figure it out from context.
 
+## Librarys 
+- In Python, libraries are generally called **modules** and **packages**.
+- The module is a simple Python file that contains collections of functions and global variables and with having a .py extension file.
+- The package is a simple directory having collections of modules. 
+- In Python, there is still going to be a CS50 library:
+> import cs50
+- If you only want to import one or specific things, you don't have to import the whole library.
+- You can import from cs50 a specific function or symbol like this:
+> from cs50 import get_string
+- To get input from the user, we had to introduce get_string. 
+- We also had to introduce, in the context of printf, placeholders like %s.
+
 ## Positional parameters
-- In Python, the default seems to be to give you a new line at the end of any print statement.
-- how do you actually get those back-- or get rid of that if you indeed do?
-- All of these parameters or arguments we've been using for weeks, where you just put a comma-separated list of arguments or values inside of parentheses when calling a function to give those functions input, those have been called positional parameters because the order has always mattered.
+- In Python, the default gives you a new line at the end of any print statement.
+- how do you actually get those back or get rid of it?
+- All of these parameters or arguments we've been using for weeks, where you just put a comma-separated list of arguments or values inside of parentheses when calling a function to give those functions input, have been called positional parameters because the order has always mattered.
 - The first thing, the second thing, the third thing influences what the function does with those arguments.
 
 - In python theres also named parameters whereby you can actually specify not just a generic comma-seperated list of values for which the order matters. 
-- You can instead provide the name of a variable and its value, the name of a variable and its value, specifically, the name of a parameter and its value as a comma-separated list, the upside of which is that it's a little clearer to you, the reader, you the programmer, what does what? 
-- And it's also not nearly as vulnerable to you just screwing up the order and getting them slightly out of order and constantly having to check the documentation as to what goes in what order.
+- You can instead provide the name of a variable and its value, specifically, the name of a parameter and its value as a comma-separated list, the upside of which is that it is more clear. 
+- It's not nearly as vulnerable to you just screwing up the order and getting them slightly out of order and constantly having to check the documentation as to what goes in what order.
 - If you recall using fread or fwrite, for instance, which takes a few arguments, those two are particularly annoying. 
-- If we could just use the names of those parameters, it might've eliminated some ambiguity. 
-- So how can we use in Python named parameters?
-- Well, let's just do a relatively simple example that's actually pretty commonly leveraged, which is this:
+- If we could just use the names of those parameters, it might've eliminated some ambiguity.
+
+- How can we use named parameters in Python?
 ```
 print(Hello, world")
 ```
 - If I want to get rid of this, though, I can do that by consulting the documentation for Python.
 - The official documentation for Python lives at this URL, docs.python.org. 
-- At this particular URL, there is a list of all of the functions that come built into Python itself.
+- There is a list of all of the functions that come built into Python itself.
 > docs.python.org/3/library/functions.html
-- In this documentation we can find print:
+- In this documentation we can find the signature or prototype for print function:
     - print(*objects, sep=' ', end='\n', file=None, flush=False)
-- This is the signature or prototype for the print function.
-- There is a function called print that potentially takes, 1, 2, 3, 4, 5 or more aruments or parameters. But why?
+- Print function takes, 1, 2, 3, 4, 5 or more aruments or parameters. But why?
 - Here is some new syntax:
-    - *objects.
-- This does not mean pointers. 
-- There's a * but nothing to do with memory or * or memory or pointers. 
-- This means that there's going to be 0 or more objects that can come as a comma-separated list. 
-- We used the feature when printed hello + name. 
-- When we use hello, name. we got back one-- passed in one or two arguments.
-- This just means you can pass in 0 or more just by their position.
-
-sep=' ', end='\n', file=None, flush=False 
-- This is name parameters.
-- The print function comes with one named parameter called sep for seporator, whose default value is a single space per the quote, unquote.
-- The print function also comes with an end named parameter whose default value is \n.
-- The print function also comes with file and flush, more on it later.
-- The fact that these things have names sep and end means I can use these named parameters if I so choose to override their default arguments. 
+1. *objects.
+    - There's a * but nothing to do with memory or * or memory or pointers. 
+    - This means that there's going to be 0 or more objects that can come as a comma-separated list. 
+    - We used the feature when printed hello + name. 
+    - When we use hello, name. we got back one-- passed in one or two arguments.
+    - This just means you can pass in 0 or more just by their position.
+2. sep=' ', end='\n', file=None, flush=False 
+    - This is name parameters.
+    - The print function comes with one named parameter called sep for seporator, whose default value is a single space per the quote, unquote.
+    - The print function also comes with an end named parameter whose default value is \n.
+    - The print function also comes with file and flush, more on it later.
+    - The fact that these things have names sep and end means I can use these named parameters if I so choose to override their default arguments. 
     - So, for instance, if I want to override the separator, I can use, quote, unquote, "something else" in between words. 
     - If I want to override the new line, I can change the backslash n to something else as well.
 ```
 print("hello, world", end="!")
 ```
--  So long as you put your positional arguments first and any things that have explicit names after those, Python can distinguish one from the other. 
+- As you put your positional arguments first and any things that have explicit names after those, Python can distinguish one from the other. 
 
-### Variables
+## Variables
 - C decleration:
 ```
 int counter = 0;
@@ -122,6 +176,7 @@ int counter = 0;
 ```
 counter = 0
 ```
+
 - C changing count number
 ```
 counter = counter + 1;
@@ -130,6 +185,7 @@ counter = counter + 1;
 ```
 counter = counter + 1
 ```
+
 - In C we can also do this
 ```
 counter += 1;
@@ -140,7 +196,7 @@ counter += 1
 ```
 - Python does not have ++ or --.
 
-### Data types that python supports (30m)
+## Data Types that python supports (30m)
 - In C we have a data type list such as
     - bool
     - char
@@ -516,5 +572,3 @@ print()
 - For every character called c in the Before string, go ahead and print out that character uppercase.
 - But don't print out a new line yet until we get to the very end, go ahead and print a new line-- by printing nothing.
 - So passing nothing in gives me one new line.
-
-http://www.fiverr.com/s/YR5WR8K
