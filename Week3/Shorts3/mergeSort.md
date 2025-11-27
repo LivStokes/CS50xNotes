@@ -1,12 +1,8 @@
 # Merge sort
 - Common attributes of all types of sorts is they all have worsecase runtime of n squared.
-
 - Can we do better than that? yes - merge sort.
-
 - In merge sort, the idea of the algorithm is to sort smaller arrays and then combine those arrays together (merge them) in sorted order.
-
 - Merge sort leverages something called recursion.
-
 - It is the most complicated of the four different types of sorts that has been covered.
 
 ## In pseudocode
