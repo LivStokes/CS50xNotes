@@ -26,3 +26,4 @@ This game was built using various conditionals to get the player to jump using t
 If the player hit one of the spikes, the game would restart. 
 I implemented a soundtrack for the game and had sound effects for the jump and game over. 
 I designed the cube, spikes, and ground levels using the Scratch design codespace.
+
