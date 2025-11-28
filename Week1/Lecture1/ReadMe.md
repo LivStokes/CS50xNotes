@@ -1,4 +1,4 @@
-
+# C
 # Lecture 1
 - Focusing on input of source code to an output of the machine code. 
 - This is achieved by a Compiler. Focusing on C.

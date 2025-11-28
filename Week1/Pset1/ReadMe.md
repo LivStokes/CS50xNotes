@@ -1,4 +1,6 @@
 # Two project submissions
+In detailed requirements for both the problem sets, Mario-less and Cash.
+
 ## Mario-less.c
 The mario-less problem set challenges the programmer to recreate the iconic right-aligned half-pyramid structure, using ASCII characters (#) and drawing inspiration from the classic Super Mario Bros. game. The solution demands rigorous input validation, requiring the program to continuously solicit an integer height from the user until a value between 1 and 8 (inclusive) is successfully provided. Once validated, the pyramid's construction must be executed using nested loops: the outer loop controls the vertical height (rows), while the inner loops handle the horizontal rendering. Specifically, the first inner loop must dynamically calculate and print the precise number of leading space characters required to push the pyramid to the right margin, and the subsequent inner loop must print the correct, incrementally increasing count of hash symbols (#) that form the solid blocks of the pyramid for the current row. This project emphasizes foundational C concepts, including loops, conditional logic, and precise character manipulation to achieve the target geometric output.
 
