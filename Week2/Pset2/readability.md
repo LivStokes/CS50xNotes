@@ -1,8 +1,7 @@
 # Readability
-
 - This problem set is about determining the reading grade level required to understand a given piece of text. The program, implemented in readability.c, calculates the grade level based on the Coleman–Liau index, a formula designed to estimate the complexity of English writing.
 
-T- he program analyzes the text entered by the user by counting the number of letters, words, and sentences. It then applies the following formula:
+- The program analyzes the text entered by the user by counting the number of letters, words, and sentences. It then applies the following formula:
 
 index = 0.0588 * L - 0.296 * S - 15.8
 

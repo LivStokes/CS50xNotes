@@ -4,6 +4,7 @@
 - To collect command line arguments from the user, we need to declare main as follows:
 > int main(int argc, string argv[])
 - These two special arguments enable you to know what data the user provided at the command line and how much data they provided.
+- Were passing two parameters, argc, argv.
 
 ## argc = argument count.
 - The first parameter, argc (argument count) is an integer that indicates how many arguments were entered on the command line when the program was started.
