@@ -1,0 +1,19 @@
+The average energy, valence, and danceability of a person’s top 100 songs from the past year can be determined by the audio aura.
+
+Average ENERGY
+SELECT AVG(energy) FROM songs;
+This result gives me 0.65906
+
+Average VALENCE
+SELECT AVG(valence) FROM songs;
+This result gives me 0.484443
+
+Average DANCEABILITY
+SELECT AVG(danceability) FROM songs;
+This result gives me 0.71646
+
+This way of calculating aura might not be the best representative of the listners aura.
+Spotify suggests assigning a weight percentage to the two audio “moods” that best represent your listening, and the final product is a swirling gradient of color to predict the aura.
+This can be biased..
+If there is an average valence of 0.5 which is neutral, this could be the result of a balanced mix of "happy"(1.0) and "sad"(0.0) songs. The average can be misleading.
+There is not enough data in the database stating how many times a user listened to a particular song, this can skew the aura as if a user was to play a 2 "happy" song 500 times and 10 "sad" songs 2 times, the users aura would ultimatly be lower.

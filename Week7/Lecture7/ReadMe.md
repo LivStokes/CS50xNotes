@@ -270,3 +270,152 @@ for favourite in sorted(counts, key=counts.get, reverse=True):
 - Scratch: 11
 
 ## Relational Databases
+- Allows us to store data in such a way we can relate some data to other data.
+- SQL supports 4 key pieces of functionality:
+1. C - Create
+2. R - Read
+3. U - Update
+4. D - Delete
+- CRUD is a helpful mnemonic for keeping track of what you can do with SQL.
+- SQL does these 4 things, 3 in which does the exact same terminology - C, U, D
+- CRUD is a more general concept in databases more generally in SQL specifically, the command were going to see and use for reading data is select.
+- You can insert data in create, or drop data in delete. etc.
+- What can we do in SQL.
+- We need a database to start playing with.
+- The data in databases are stored in tables, which have rows and collumns.
+- If there are multiple sets of data inside the same file, we can create more sheets.
+- In the world of relational databases, which are used for mobile applications, web applications, business applications, etc. we can have an analogue of that same idea.
+- In relational databases, we call sets of data tables, which have rows and collumns, which is really an analogue of sheets in the world of spread sheets.
+- The command which we can create such a table is:
+```
+CREATE TABLE table (column type, ...);
+```
+- Where do we run this?
+- A command line programm to access a database, sqlite3.
+- This is a light base version of SQL.
+- It stores all of your data onto a file in your hardware.
+- There are so many SQL databases that have different dialects.
+- Sqlite3 have the core features of any SQL databases.
+- How do we use sqlite3?
+- We install the software and run command line programm called sqlite3.
+- It is a command line program which we can create a database and execute commands inside that database.
+- PREWARNING
+    - If ...> appears after running a command, type Control-D to escape.
+- The syntax for creating new databse with the sqlite3 command is:
+```
+sqlite FILE (the name of the database you want to create)
+e.g. sqlite3 favourites.db
+```
+- It will then as are you sure you want to create it? which you reply yes.
+- It is inside a program that is running until you quit out of it.
+- Then we do:
+```
+.mode csv
+```
+- This can import different text files such as csv tsv etc.
+- The command starts with a . beacuse it is configuring sqlite program itself.
+- Then we can:
+```
+.import favourites.csv favourites
+```
+- We have a file called favourites.csv, we created a new file called favourites.db, and we are storing inside the favourites.db file, a table called favourites.
+- This is like having a sheet called favourites inside of a file called favourites.xlsx
+- After import, we can 
+```
+.quit
+```
+- Which gets us back to the terminal.
+- Now when we do ls, we see favourites,csv, favourites.db, favourites.py
+- We can return sqlite3 favourites.db which brings us back into the prompt.
+- We can do
+```
+.schema
+```
+- This is the design of the database, showing the tables in there.
+- The output of .schema is:
+```
+CREATE TABLE IFNOT EXISTS "favourites"("Timestamp" TEXT, "language", TEXT, "problem", TEXT);
+```
+- What type of data was imported?
+- The .import command is naive and if it just sees data, its going to assume its text, text, text. Even if it looks like numbers, it will still assume its text.
+- Theres actually proper data types we can do.
+- The .import command automatically gets going with a SQLite database containing all of the same data as a CSV.
+- If for work, you have a csv file that is part of the task, you can quickly import it into your own SQLite database and instantly start executing the following types of SQL commands on it to answer questions about that data.
+
+- Lets introduce the first of those CRUD commands which we can read data from a database.
+- The command for reading data is SELECT.
+```
+SELECT columns FROM table;
+```
+- It selects data from a database and reads it.
+- Then specify one or more collumns you want to select data from.
+- You specify what table you want those columns to come from.
+- This is the simplest form of the select statement in SQL.
+- To test this:
+```
+SELECT * FROM favourites;
+```
+- (*) in this case is a wild card representing ever column in the table.
+- This allows you to glance at a file from the screen.
+- We see an ASCII art version of the tabular data.
+- The commas have been interperated in advance as deliniating columns which allow us to visually see vertical columns/pipes.
+- If we want to select only one column:
+```
+SELECT language FROM favourites
+```
+- We are creating a temporarily in memory a virtual table of the data that we care about. We are dumping it to the screen.
+- Besides from just selecting the data, we have functions built in:
+- AVG
+- COUNT
+- DISTINCT
+- LOWER
+- MAX
+- MIN
+- UPPER
+- SQL is commenly used in data science because it lets us answer questions about data.
+- E.G. If we want to compute averages, or count the number of rows, or unique or distinct values in a dataset etc...
+- To see how many people submitted the form before downloading it into codespace:
+```
+SELECT COUNT(*) FROM favourites;
+```
+- This gives us back a temporary table that contains one value of interest, 13 submissions.
+- If we want to get the unique values of everyones favourite language, use DISTINCT
+```
+SELECT DISTINCT language FROM favourites;
+```
+- This gives me back Python, C, Scratch.
+- What if we want to count how many unique languages there are?
+```
+SELECT COUNT(DISTINCT langauge) FROM favourites;
+```
+- This gives me back 3.
+- There are even more functions and keywords we can use:
+- GROUP BY
+- LIKE
+- LIMIT
+- ORDER BY
+- WHERE
+- We can group data. look for dara thats LIKE a certain value not exactly equal to, we can limit how much data comes back, we can order or sort the data, and we can also use conditionals, filters, otherwise known as predicates, to get back subsets of data.
+- For example, how many like C?:
+```
+SELECT COUNT(*) FROM favourites WHERE language = 'C';
+```
+- We use quotes when we want to quote a string value, a tectual value, a literal, we use single quotes.
+- This is saying seect the count of all of the rows from favourite where the language from that row = C.
+- This gives me: 3, as there were 3 C inputs.
+- How to find out how many peopleliked a particular problem?
+```
+SELECT COUNT(*) FROM favourites WHERE language = 'C' AND problem = 'Mario';
+```
+- Key word is AND. This is giving me some booleon average.
+- The output is 2, as Mario shows up 2 times in the database.
+- What have we been doing stylistically?
+- We have kept capitalizing SELECT and COUNT and FROM and WHERE and AND, then using lowercase as appropriate for everything else.
+- This is a stylistic convention.
+- Use uppercase keywords for anthing thats built into SQL itself.
+- Then use proper capitalization for any tables you yourself have created, for any values youre searching from, this is so it is more readable when you can distinguish what is SQL code.
+- If we want to check for popularity of two different problems, we can say:
+```
+SELECT COUNT(*) FROM favourites WHERE language = 'Python' AND (problem = 'Scratch' OR problem = 'Caesar');
+```
+- The probem here is that there are 
