@@ -5,7 +5,7 @@ Python is a Higher level language which does lower level stuff more quick.
 - You can iterate over things much more quickly than using a traditional for loop as in C.
 - It has even more of an ecosystem of libraries.
     - Libraries being code that other people wrote that you can use.
-    
+
 To run a program:
 - In C to make program and run it:
 ```
@@ -545,7 +545,7 @@ for i in [0, 1, 2]:
 for i in range(3):
     print("meow")
 ```
-- the range function hands you out one value at a time more efficiently than the hardcoded list, which puts them all in memory at once.
+- The range function hands you out one value at a time more efficiently than the hardcoded list, which puts them all in memory at once.
 - it knows how to give you, indeed, just one value at a time.
 - Were using the variable i, but not actually using i anywhere. 
 - By convention, change the i to just an underscore character, which is a valid character for a variable. 
